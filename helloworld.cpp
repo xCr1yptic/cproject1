@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 
+
 using namespace std;
 
 int main()
@@ -13,4 +14,8 @@ int main()
         cout << word << " ";
     }
     cout << endl;
+
+    return 0; 
+    
+
 }
