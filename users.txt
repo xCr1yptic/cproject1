@@ -1,0 +1,3 @@
+alice securePass123
+david happyWords23
+charlie gooseGuessingGame@2
