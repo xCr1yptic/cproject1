@@ -7,7 +7,7 @@ using namespace std;
 
 int main() {
     // Variable Init
-    char userInput;
+    char userInput {};
     string username;
     string password;
 
@@ -17,22 +17,51 @@ int main() {
 
     cout << "Welcome to the Student Grade Point Average Calculator!" << endl; 
 
+    while (userInput != 'Q') {
 
-    cout << "Please select one of the follow menu options:\n(A)View Grades * Verification Required \n(B) Enter Grades\n(C) What If Grades \n(D) Calculate Grades\n(E) Report Card Generator";
-    cin >> userInput;
+        cout << "Please select one of the follow menu options:\n(A) View Grades * Verification Required \n(B) Enter Grades\n(C) What If Grades \n(D) Calculate Grades\n(E) Report Card Generator\n(Q) Quit" << endl;
+        cin >> userInput;
 
 
-    if (userInput == 'A') {
-        cout << "Please enter your username followed by your password";
-        cin >> username >> password;
+        if (userInput == 'A') {
+            cout << "Please enter your username followed by your password";
+            cin >> username >> password;
 
-        if (verification(username, password)) { // Verifies user before allowing access to view grades
-            viewGrades(username);
+            if (verification(username, password)) { // Verifies user before allowing access to view grades
+                viewGrades(username);
+                break;
+            }
+            else {
+                cout << "Invalid username or password." << endl; 
+            }
+        }
+
+        else if(userInput == 'B') {
+
+        }
+
+        else if(userInput == 'C') {
+
+        }
+
+        else if(userInput == 'D') {
+
+        }
+        else if(userInput == 'E') {
+
+        }
+        else if(userInput == 'Q'){
+            cout << "Thank you!";
+            break;
+
         }
         else {
-            cout << "Invalid username or password." << endl; 
+            cout << "Not a valid input";
+
         }
+
     }
+    
 
 
     
@@ -56,7 +85,7 @@ bool verification (string user, string pass) {
 }
 
 void viewGrades(string name) { 
-
+   
 
 }
 
