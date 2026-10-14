@@ -85,7 +85,15 @@ bool verification (string user, string pass) {
 }
 
 void viewGrades(string name) { 
+   ifstream file("grades.txt");
+
+   if(!file.is_open ()) {
+    cout << "Could not open view grades file" << endl; 
+   }
    
+   cout << file.rdbuf();
+   file.close();
+
 
 }
 
