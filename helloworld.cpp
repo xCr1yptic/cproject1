@@ -29,6 +29,10 @@ int main() {
 
             if (verification(username, password)) { // Verifies user before allowing access to view grades
                 viewGrades(username);
+
+                cout << "Press enter to exit...";
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                cin.get();
                 break;
             }
             else {
@@ -92,7 +96,7 @@ void viewGrades(string name) {
     cout << "Could not open view grades file" << endl; 
    }
 
-   cout << file.rdbuf();
+   cout << file.rdbuf() << endl;
    file.close();
 
 
