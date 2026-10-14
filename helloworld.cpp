@@ -21,10 +21,10 @@ int main() {
 
         cout << "Please select one of the follow menu options:\n(A) View Grades * Verification Required \n(B) Enter Grades\n(C) What If Grades \n(D) Calculate Grades\n(E) Report Card Generator\n(Q) Quit" << endl;
         cin >> userInput;
-
+        userInput = toupper(static_cast<unsigned char>(userInput));
 
         if (userInput == 'A') {
-            cout << "Please enter your username followed by your password";
+            cout << "Please enter your username followed by your password: ";
             cin >> username >> password;
 
             if (verification(username, password)) { // Verifies user before allowing access to view grades
@@ -85,12 +85,13 @@ bool verification (string user, string pass) {
 }
 
 void viewGrades(string name) { 
-   ifstream file("grades.txt");
+   string path = "grades/" + name + ".txt";
+    ifstream file(path);
 
    if(!file.is_open ()) {
     cout << "Could not open view grades file" << endl; 
    }
-   
+
    cout << file.rdbuf();
    file.close();
 
